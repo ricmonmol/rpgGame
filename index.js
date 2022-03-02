@@ -9,4 +9,15 @@ function render(){
     document.getElementById('monster').innerHTML = orc.getCharacterHtml()
 }
 
+
+function attack(){
+    wizard.getDiceHtml()
+    orc.getDiceHtml()
+    wizard.takeDamage(orc.currentDiceScore)
+    orc.takeDamage(wizard.currentDiceScore)
+    render()
+}
+
+document.getElementById("attack-button").addEventListener('click', attack)
+
 render()
